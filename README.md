@@ -83,3 +83,20 @@ Stage 4
 教材不绑定 Codex、Claude Code 或其他具体产品。只要工具能够读取/修改仓库并运行 Maven/Java 命令，就可以使用。
 
 仓库维护同一份 AI 编程约束的双镜像：`AGENTS.md` 与 `CLAUDE.md`（内容一致，修改须同步）。
+
+## 仓库已初始化
+
+已按 `docs/prompts/00_repository_bootstrap.md` 搭建 Maven 多模块骨架：
+
+- 根 `pom.xml`：聚合工程，统一 JDK 21、依赖版本与基础插件；
+- 14 个 Lab 模块：`labs/lab01-llm-basics` ~ `labs/lab14-observability-eval`；
+- 4 个 Stage 模块：`stages/stage01-minimal-agent` ~ `stages/stage04-agent-harness`。
+
+当前每个模块都是教学占位骨架（占位 `Main` + smoke test），尚未实现任何 Agent 能力。
+
+从第一章开始：
+
+```text
+docs/chapters/01_LLM到Agent_无状态与上下文.md
+docs/prompts/01_bootstrap_llm_basics.md
+```
