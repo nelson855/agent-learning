@@ -13,5 +13,16 @@
 
     <artifactId>lab03-agent-loop-react</artifactId>
     <name>lab03-agent-loop-react</name>
-    <description>教学占位骨架：Agent Loop 与 ReAct</description>
+    <description>Agent Loop 与 ReAct：上下文 → 决策 → 工具/观察 → 再决策</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+        </dependency>
+    </dependencies>
 </project>
