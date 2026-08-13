@@ -1,3 +1,7 @@
+<!--
+本文件是 AGENTS.md 的镜像，供 Claude Code / Claude app 自动加载（Claude Code 只自动读取 CLAUDE.md，不会自动读取 AGENTS.md）。
+规则变更时请同步修改 AGENTS.md 与 CLAUDE.md，保持两处内容一致。
+-->
 # AGENTS.md — AI Agent Learning Repository
 
 ## 1. 你正在维护什么
