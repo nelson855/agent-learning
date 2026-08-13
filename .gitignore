@@ -55,7 +55,6 @@ hq/
 /.agents/
 
 ### Frontend ###
-node_modules/
 dist/
 coverage/
 *.local
