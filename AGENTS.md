@@ -310,7 +310,7 @@ Web 页展示的 State / Memory / Trace 应来自后端真实状态，不要在�
 
 ## 9. LLM 调用约定
 
-代码通过环境变量读取：
+配置从环境变量或仓库根目录 `.env` 文件读取，取值优先级为**环境变量 > `.env` 文件**：
 
 ```text
 LLM_BASE_URL
@@ -318,7 +318,9 @@ LLM_API_KEY
 LLM_MODEL
 ```
 
-不要把 Key 写入仓库。
+- `.env` 提供本地便捷配置，格式为 `KEY=VALUE`，放在仓库根目录；
+- `.env` 已加入 `.gitignore`，不要把 Key 写入仓库、不要提交 `.env`；
+- `.env.example` 作为可提交的模板。
 
 优先保留一个供应商无关的：
 
