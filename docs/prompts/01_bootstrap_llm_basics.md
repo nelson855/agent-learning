@@ -1,7 +1,7 @@
 # 实现 Prompt 01：LLM 无状态与多轮上下文 Demo
 
 > 本 Prompt 与具体 AI 编程工具无关。适用于任何能够读取仓库文件、修改代码并执行 Maven/Java 命令的 AI 编程工具。
-> 开始前必须先读取仓库根目录 `AGENTS.md`；不要创建额外的工具专属规则文件。
+> 开始前必须先读取仓库根目录 `AGENTS.md`；除 `AGENTS.md` / `CLAUDE.md` 双镜像外，不要创建额外的工具专属规则文件。
 
 请先阅读仓库根目录 `AGENTS.md`、`docs/02_仓库架构与构建说明.md` 和教材 `docs/chapters/01_LLM到Agent_无状态与上下文.md`。
 

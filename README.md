@@ -82,4 +82,4 @@ Stage 4
 
 教材不绑定 Codex、Claude Code 或其他具体产品。只要工具能够读取/修改仓库并运行 Maven/Java 命令，就可以使用。
 
-仓库只维护一份统一 AI 编程约束：`AGENTS.md`。
+仓库维护同一份 AI 编程约束的双镜像：`AGENTS.md` 与 `CLAUDE.md`（内容一致，修改须同步）。

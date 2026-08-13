@@ -16,7 +16,7 @@ docs/03_技术基线与工程约定.md
 docs/04_Web可视化调试台规范.md
 ```
 
-不要创建 `CLAUDE.md`、`CODEX.md` 或其他工具专属规则文件；本仓库只使用根目录 `AGENTS.md` 作为统一 AI 编程约束。
+仓库级统一约束是 `AGENTS.md` 与 `CLAUDE.md` 双镜像（内容一致，修改须同步）；不要创建 `CODEX.md` 等其他工具专属规则文件。
 
 ## 目标
 
@@ -170,7 +170,7 @@ target/
 在初始化阶段创建 Web 接口
 在初始化阶段创建前端（Stage 2~4 会在对应综合 Prompt 中再创建）
 创建 Docker 配置
-创建工具专属规则文件
+创建 AGENTS.md / CLAUDE.md 之外的工具专属规则文件
 ```
 
 ## 八、验收
@@ -189,7 +189,7 @@ mvn test
 2. 根 Maven reactor 能找到全部 18 个模块；
 3. `mvn test` 成功；
 4. 没有 Agent 业务实现；
-5. 没有额外工具专属规则文件；
+5. 除 AGENTS.md / CLAUDE.md 外没有额外工具专属规则文件；
 6. 根目录结构与 `docs/02_仓库架构与构建说明.md` 一致。
 
 最后输出：
