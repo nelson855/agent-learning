@@ -13,5 +13,16 @@
 
     <artifactId>lab07-rag-context</artifactId>
     <name>lab07-rag-context</name>
-    <description>教学占位骨架：Memory 与 RAG、Context 的区别</description>
+    <description>Memory 与 RAG、Context 的区别（极简 Knowledge Store + Context Builder）</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+        </dependency>
+    </dependencies>
 </project>
