@@ -13,5 +13,16 @@
 
     <artifactId>lab09-checkpoint</artifactId>
     <name>lab09-checkpoint</name>
-    <description>教学占位骨架：Harness、Checkpoint 与长任务</description>
+    <description>Harness 与 Checkpoint：中断恢复与长任务</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+    </dependencies>
 </project>
