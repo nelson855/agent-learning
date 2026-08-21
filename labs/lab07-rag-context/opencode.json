@@ -1,0 +1,30 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "desktop-openai/DeepSeek-V4-Flash",
+  "instructions": ["LAB07_PLAN.md"],
+  "permission": {
+    "read": {
+      "**": "allow",
+      ".git/**": "deny"
+    },
+    "edit": {
+      "**": "deny",
+      "**/src/main/java/com/example/agentlearning/lab07/Main.java": "allow",
+      "**/src/main/java/com/example/agentlearning/lab07/MemoryExtractor.java": "allow"
+    },
+    "bash": {
+      "mvn compile*": "allow",
+      "mvn test*": "allow",
+      "mvn -q compile*": "allow",
+      "mvn -q test*": "allow",
+      "git*": "deny",
+      "rm -r*": "deny",
+      "rm -f*": "deny",
+      "*": "deny"
+    },
+    "todowrite": "allow",
+    "question": "deny",
+    "webfetch": "deny",
+    "websearch": "deny"
+  }
+}

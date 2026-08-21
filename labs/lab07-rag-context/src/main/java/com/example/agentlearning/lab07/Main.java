@@ -26,53 +26,7 @@ public final class Main {
     }
 
     public static void main(String[] args) throws Exception {
-        if (args.length > 0 && "--demo".equals(args[0])) {
-            runDemo();
-        } else {
-            runInteractive();
-        }
-    }
-
-    // ---------------- Demo ----------------
-
-    private static void runDemo() throws Exception {
-        System.out.println("==== Lab07 演示：Memory / RAG / Context 的区别 ====");
-        System.out.println();
-
-        ScriptedLlmClient llm = ScriptedLlmClient.of(
-                "{\"shouldRemember\":true,\"memoryType\":\"PREFERENCE\",\"content\":\"用户偏好 Maven 构建\"}",
-                "根据项目文档，任务系统使用 SQLite 数据库。",
-                "根据你的长期偏好，你偏好 Maven 构建。",
-                "根据编码规范，本项目使用 Maven 作为构建工具。");
-
-        Database db = openDatabase();
-        Components c = build(db, llm);
-        printImport(c);
-
-        // 先让用户说出偏好，走一遍 Memory Extractor 保存流程
-        String preference = "以后我的 Java 项目都用 Maven 构建。";
-        System.out.println(">>> 用户: " + preference);
-        MemoryDecision decision = c.extractor().extract(preference);
-        if (decision.shouldRemember() && !decision.content().isBlank()) {
-            c.memories().save(USER_ID, decision.memoryType(), decision.content(), 5);
-            System.out.println("MEMORY SAVED: [" + decision.memoryType() + "] " + decision.content());
-        }
-        System.out.println();
-
-        System.out.println("--- 问题 1：项目规范来自 RAG ---");
-        System.out.println(">>> 用户: 任务系统使用什么数据库？");
-        answer(c, "任务系统使用什么数据库？");
-
-        System.out.println("--- 问题 2：用户长期偏好来自 Memory ---");
-        System.out.println(">>> 用户: 我的项目用什么构建？");
-        answer(c, "我的项目用什么构建？");
-
-        System.out.println("--- 问题 3：同一条事实，两种身份（教材 8.4）---");
-        System.out.println(">>> 用户: 项目使用什么构建工具？");
-        answer(c, "项目使用什么构建工具？");
-
-        db.close();
-        System.out.println("==== 演示结束 ====");
+        runInteractive();
     }
 
     private static void answer(Components c, String question) {
@@ -135,6 +89,11 @@ public final class Main {
                     System.out.println("- [" + d.title() + "] " + ContextBuilder.snippet(d.content()));
                 }
                 continue;
+            }
+            MemoryDecision decision = c.extractor().extract(line);
+            if (decision.shouldRemember() && !decision.content().isBlank()) {
+                c.memories().save(USER_ID, decision.memoryType(), decision.content(), 5);
+                System.out.println("MEMORY SAVED: [" + decision.memoryType() + "] " + decision.content());
             }
             answer(c, line);
         }

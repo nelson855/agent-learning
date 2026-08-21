@@ -31,6 +31,10 @@ public final class MemoryExtractor {
 
     public MemoryDecision extract(String userInput) {
         LlmResponse reply = llm.chat(List.of(Message.system(PROMPT), Message.user(userInput)));
-        return MemoryDecisionParser.parse(reply.content());
+        MemoryDecision decision = MemoryDecisionParser.parse(reply.content());
+        if (decision.shouldRemember() && !decision.content().isBlank()) {
+            System.out.println("MEMORY EXTRACTED: [" + decision.memoryType() + "] " + decision.content());
+        }
+        return decision;
     }
 }
